@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Event.css';
+import '../styles/Event.css';
 import withAuthProtection from '../utils/withAuthProtection';
 
 const EventForm = () => {

@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 //import classes from './Components/Login.module.css';
 //import {classes} from './Components/Login.module.css';
-import './Login.css'
+import '../styles/Login.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 
 export function LoginPage() {
     const [formData,setformData] = useState({})
+    
     const navigate = useNavigate();
 
   const login = async (e) => {
     e.preventDefault();
     try {
         const result = await (
-              await axios.post('http://192.168.251.27:8000/accounts/login/',formData)).data
+              await axios.post('http://localhost:8000/accounts/login/',formData)).data
         console.log(result);
         localStorage.setItem('token',result.token);
         localStorage.setItem('username',formData.username);

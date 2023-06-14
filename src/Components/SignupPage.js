@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './Signup.css';
+import '../styles/Signup.css';
 import { useNavigate } from "react-router";
 // import { axiosInstance } from "../utils/api";
 import axios from "axios";
@@ -23,7 +23,7 @@ const signUp = async (e) => {
   //console.log(formData)
    try {
     const result = await (
-          await axios.post('http://192.168.251.27:8000/accounts/register/',formData)).data
+          await axios.post('http://localhost:8000/accounts/register/',formData)).data
     console.log(result)
     localStorage.setItem('token', result.token);
     localStorage.setItem('username', result.username)
